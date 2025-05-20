@@ -15,6 +15,10 @@ const UnidadModel = db.define('unidades', {
     tipo: { 
         type: DataTypes.STRING,
         allowNull: false
+    },
+    unidad: { 
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     timestamps: false

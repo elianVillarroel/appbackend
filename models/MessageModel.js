@@ -20,6 +20,12 @@ const MessageModel = db.define('messages', {
     },
     fechaFin: { 
         type: DataTypes.DATE
+    },
+    hora_inicio: { 
+        type: DataTypes.TIME, // Mejor usar DATE para fechas
+    },
+    hora_fin: { 
+        type: DataTypes.TIME
     }
 }, {
     timestamps: false // Desactiva createdAt y updatedAt
