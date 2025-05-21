@@ -35,15 +35,6 @@ const MessageModel = db.define('messages', {
     timestamps: false // Desactiva createdAt y updatedAt
 });
 
-// Método para establecer asociaciones (se llamará desde db.js)
-MessageModel.associate = (models) => {
-    MessageModel.belongsToMany(models.DestinatarioModel, {
-        through: models.MensajeDestinatarioModel,
-        foreignKey: 'mensaje_id',
-        otherKey: 'destinatario_id',
-        as: 'destinatarios'
-    });
-};
 
 export default MessageModel;
 
