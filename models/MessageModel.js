@@ -4,7 +4,7 @@ import { DataTypes } from "sequelize";
 const MessageModel = db.define('messages', {
     title: { 
         type: DataTypes.STRING,
-        allowNull: false // Añadir validaciones
+        allowNull: false 
     },
     description: { 
         type: DataTypes.STRING,
@@ -12,17 +12,17 @@ const MessageModel = db.define('messages', {
     },
     status: { 
         type: DataTypes.STRING,
-        defaultValue: 'active' // Valor por defecto
+        defaultValue: 'active' 
     },
     fechaInicio: { 
-        type: DataTypes.DATE, // Mejor usar DATE para fechas
+        type: DataTypes.DATE, 
         allowNull: false
     },
     fechaFin: { 
         type: DataTypes.DATE
     },
     hora_inicio: { 
-        type: DataTypes.TIME, // Mejor usar DATE para fechas
+        type: DataTypes.TIME, 
     },
     hora_fin: { 
         type: DataTypes.TIME
@@ -30,9 +30,13 @@ const MessageModel = db.define('messages', {
     unidad_emisora: { 
         type: DataTypes.STRING,
         allowNull: false
+    },
+    destinatarios_csv: { 
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
-    timestamps: false // Desactiva createdAt y updatedAt
+    timestamps: false 
 });
 
 
