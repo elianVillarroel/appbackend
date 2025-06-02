@@ -1,4 +1,3 @@
-// Importamos el Modelo
 import MessageModel from "../models/MessageModel.js";
 
 //** Métodos para el CRUD */

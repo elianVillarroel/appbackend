@@ -34,6 +34,10 @@ const MessageModel = db.define('messages', {
     destinatarios_csv: { 
         type: DataTypes.STRING,
         allowNull: false
+    },
+    imagen_url: {
+    type: DataTypes.STRING,
+    allowNull: true
     }
 }, {
     timestamps: false 
