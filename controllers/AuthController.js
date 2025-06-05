@@ -28,23 +28,27 @@ export const login = async (req, res) => {
         }
         
         const token = jwt.sign(
-            { id: unidad.id, usuario: unidad.usuario, tipo: unidad.tipo },
+            { 
+                id: unidad.id, 
+                usuario: unidad.usuario, 
+                tipo: unidad.tipo,
+                unidad: unidad.unidad  // Añadir la unidad al token
+            },
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_EXPIRES_IN }
         );
-        
-        const unidadSinContraseña = {
-            id: unidad.id,
-            usuario: unidad.usuario,
-            tipo: unidad.tipo,
-            unidad: unidad.unidad
-        };
         
         res.json({ 
             success: true, 
             message: "Autenticación exitosa",
             token,
-            unidad: unidadSinContraseña
+            tipo: unidad.tipo,  // Asegurarse de enviar el tipo
+            unidad: {  // Estructura que espera el frontend
+                id: unidad.id,
+                usuario: unidad.usuario,
+                tipo: unidad.tipo,
+                unidad: unidad.unidad
+            }
         });
         
     } catch (error) {
