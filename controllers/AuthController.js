@@ -18,8 +18,6 @@ export const login = async (req, res) => {
                 message: "Credenciales incorrectas" 
             });
         }
-        
-        // Comparación directa de contraseña (sin hashing)
         if (contraseña !== unidad.contraseña) {
             return res.status(401).json({ 
                 success: false, 
@@ -32,7 +30,7 @@ export const login = async (req, res) => {
                 id: unidad.id, 
                 usuario: unidad.usuario, 
                 tipo: unidad.tipo,
-                unidad: unidad.unidad  // Añadir la unidad al token
+                unidad: unidad.unidad
             },
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_EXPIRES_IN }
