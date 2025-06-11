@@ -1,8 +1,5 @@
 import MessageModel from "../models/MessageModel.js";
 
-//** Métodos para el CRUD */
-
-// Mostrar todos los registros
 export const getAllMessage = async (req, res) => {
     try {
         const message = await MessageModel.findAll();
@@ -12,7 +9,6 @@ export const getAllMessage = async (req, res) => {
     }
 };
 
-// Mostrar un registro
 export const getMessage = async (req, res) => {
     try {
         const message = await MessageModel.findAll({
@@ -24,7 +20,6 @@ export const getMessage = async (req, res) => {
     }
 };
 
-// Crear un registro
 export const createMessage = async (req, res) => {
     try {
         await MessageModel.create(req.body);
@@ -36,7 +31,6 @@ export const createMessage = async (req, res) => {
     }
 };
 
-// Actualizar un registro
 export const updateMessage = async (req, res) => {
     try {
         await MessageModel.update(req.body, {
@@ -50,7 +44,6 @@ export const updateMessage = async (req, res) => {
     }
 };
 
-// Eliminar registro
 export const deleteMessage = async (req, res) => {
     try {
         await MessageModel.destroy({

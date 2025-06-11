@@ -1,7 +1,7 @@
-// controllers/UnidadController.js
+
 import UnidadModel from "../models/UnidadModel.js";
 
-// Métodos CRUD para unidades
+
 export const getAllUnidades = async (req, res) => {
     try {
         const unidades = await UnidadModel.findAll();

@@ -40,8 +40,8 @@ export const login = async (req, res) => {
             success: true, 
             message: "Autenticación exitosa",
             token,
-            tipo: unidad.tipo,  // Asegurarse de enviar el tipo
-            unidad: {  // Estructura que espera el frontend
+            tipo: unidad.tipo,  
+            unidad: { 
                 id: unidad.id,
                 usuario: unidad.usuario,
                 tipo: unidad.tipo,
